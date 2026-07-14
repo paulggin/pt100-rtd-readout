@@ -1,0 +1,17 @@
+* ideal_models.lib — ideal macromodels for PT100 readout DC validation
+* In KiCad 8: each part's Simulation Model -> "SPICE model from file:" -> this file,
+* then the Pin Assignments tab to map symbol pins to ports.
+* Every port is tied to ground through 1G so no node floats (avoids singular-matrix errors).
+
+* ---- Ideal instrumentation amp: fixed gain 10.107, output referred to REF pin ----
+.subckt INA128_IDEAL OUT INP INN REF VP VM RG1 RG8
+B1  OUT REF V = 10.107*(V(INP) - V(INN))
+Rin INP INN 1G
+Rvp VP 0 1G
+Rvm VM 0 1G
+Rg1 RG1 0 1G
+Rg8 RG8 0 1G
+.ends
+
+* ---- Ideal op-amp (open-loop gain 1e6; close the loop with the external feedback R's) ----
+* Only needed if you did NOT use KiCad's built-in Simulation_SPICE "OP

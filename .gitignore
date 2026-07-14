@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.venv/
+.env
+.idea/
+.vscode/
+*.egg-info/
+# KiCad backups / autosave
+*-backups/
+*.kicad_sch-bak
+*.kicad_pcb-bak
+fp-info-cache
+*.net
