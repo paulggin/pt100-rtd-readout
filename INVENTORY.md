@@ -6,6 +6,7 @@
 |:--|:--|
 | `schematic/pt100_readout_schematic.pdf` | Buildable schematic: improved Howland 1.000 mA current source, 4-wire PT100, INA128 instrumentation amp (×10), difference amplifier (×7.87) with a shared-reference baseline. Full BOM and net list in the sheet. |
 | `schematic/pt100_sim_schematic.pdf` | Simulation-ready variant captured in KiCad 8: ideal current source, VDC rails, and ideal INA/op-amp macromodels, laid out to solve cleanly in ngspice. |
+| `schematic/pt100.01.kicad_sch` | KiCad 8 schematic source for the simulation build (ideal IDC excitation, R5 lead resistor, INA128 + ideal OPAMP symbols). Opens standalone in KiCad; the SPICE sweeps in `spice/` were produced from this sheet. |
 
 ## SPICE
 
@@ -37,7 +38,7 @@
 
 ## KiCad source
 
-The `.kicad_sch` project is maintained locally and is not yet committed. The two schematic PDFs above are exact renders of the buildable and simulation-ready sheets; the KiCad source can be added once the project is de-versioned for public release.
+The simulation schematic source is committed as `schematic/pt100.01.kicad_sch` (KiCad 8). It opens standalone in the schematic editor; the ideal-model assignments reference `spice/ideal_models.lib`. The two PDFs are exact renders of the buildable and simulation-ready sheets.
 
 ## Reproducibility
 
